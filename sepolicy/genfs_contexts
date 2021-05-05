@@ -1,0 +1,29 @@
+# Bluetooth
+genfscon proc /bluetooth/sleep/lpm                   u:object_r:proc_bluetooth_writable:s0
+genfscon proc /bluetooth/sleep/btwrite               u:object_r:proc_bluetooth_writable:s0
+#genfscon sysfs /class/rfkill/rfkill0/state           u:object_r:sysfs_bluetooth_writable:s0
+
+# CPU
+genfscon proc /sys/kernel/sched_boost                u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_downmigrate          u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_freq_dec_notify      u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_freq_inc_notify      u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_init_task_load       u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_migration_cost_ns    u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_migration_fixup      u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_small_task           u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_spill_nr_run         u:object_r:proc_kernel_sched:s0
+genfscon proc /sys/kernel/sched_upmigrate            u:object_r:proc_kernel_sched:s0
+genfscon proc /irq                                   u:object_r:proc_irq:s0
+
+genfscon sysfs /devices/soc/qpnp-rtc-8/rtc           u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/soc/74a4900.sdhci/mmc_host/mmc0 u:object_r:sysfs_mmc_host:s0
+genfscon sysfs /devices/soc/74a4900.sdhci/mmc_host/mmc1 u:object_r:sysfs_mmc_host:s0
+
+genfscon sysfs /devices/soc/1c00000.qcom,ssc/subsys3/name u:object_r:sysfs_ssr:s0
+
+# Health
+genfscon sysfs /devices/soc/soc:qcom,bcl/power_supply               u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/qpnp-fg-17/power_supply                 u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/msm-bcl-14/power_supply                 u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /devices/soc/757a000.i2c/i2c-6/6-0028/power_supply   u:object_r:sysfs_battery_supply:s0
