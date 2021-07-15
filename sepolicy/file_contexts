@@ -1,0 +1,135 @@
+# Bluetooth
+/(vendor|system/vendor)/bin/hwaddrs                                 u:object_r:hwaddrs_exec:s0
+/sys/devices/bluesleep/rfkill/rfkill0/state                         u:object_r:sysfs_bluetooth_writable:s0
+/sys/devices/bcm43xx/rfkill/rfkill[0-9](/.*)?                       u:object_r:sysfs_bluetooth_writable:s0
+/persist/\.baddr                                                    u:object_r:mnt_vendor_file:s0
+
+# Camera
+/data/misc/camera/cam_socket[0-9]                                   u:object_r:camera_socket:s0
+/sys/devices/soc/8c0000\.qcom,msm-cam/video4linux/video0(/.*)?      u:object_r:sysfs_graphics:s0
+/sys/devices/soc/aa4000\.qcom,fd/video4linux/video1(/.*)?           u:object_r:sysfs_graphics:s0
+
+# CPU tunable for EAS
+/sys/devices/system/cpu/cpu[0-3]/cpufreq/schedutil(/.*)?            u:object_r:sysfs_devices_system_cpu:s0
+
+# Encryption metadata partition
+/dev/block/platform/soc/624000\.ufshc/by-name/encrypt               u:object_r:metadata_block_device:s0
+
+# Fingerprint
+/(vendor|system/vendor)/bin/fpc_early_loader                        u:object_r:fpc_early_loader_exec:s0
+/sys/devices/soc/75b7000\.spi/spi_master/spi8/spi8\.1(/.*)?         u:object_r:sysfs_devices_fingerprint:s0
+/sys/devices/soc/75ba000\.spi/spi_master/spi12/spi12\.[0-1](/.*)?   u:object_r:sysfs_devices_fingerprint:s0
+
+# Firmware
+/firmware(/.*)?                                                     u:object_r:firmware_file:s0
+/(vendor|system/vendor)/firmware/image/modem_pr(/.*)?               u:object_r:firmware_file:s0
+
+# FRP partition
+/dev/block/platform/soc/624000\.ufshc/by-name/persistent            u:object_r:frp_block_device:s0
+
+# Gestures
+/sys/devices/virtual/input/lge_touch/lpwg_notify                    u:object_r:sysfs_gesture:s0
+
+# Graphics
+/sys/devices/virtual/graphics/fb[0-2](/.*)?                         u:object_r:sysfs_graphics:s0
+
+# Init
+/(vendor|system/vendor)/bin/init\.power\.sh                         u:object_r:init_power_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.graphics\.sh                u:object_r:init_graphics_exec:s0
+/(vendor|system/vendor)/bin/init\.radio\.sh                         u:object_r:init_radio_exec:s0
+
+# IR
+/dev/ttyHSL1                                                        u:object_r:cir_device:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service.lge       u:object_r:hal_ir_default_exec:s0
+
+# DRM
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine                u:object_r:hal_drm_widevine_exec:s0
+
+# Lights
+/sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns         u:object_r:sysfs_leds:s0
+/sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns         u:object_r:sysfs_leds:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight-ex(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.+[a-z0-9]/leds/lcd-backlight-ex(/.*)?   u:object_r:sysfs_graphics:s0
+
+# MPT
+/mpt(/.*)?                      u:object_r:mpt_file:s0
+
+# Netmgr
+/data/misc/netmgr(/.*)?                                             u:object_r:net_data_file:s0
+
+# NFC
+/dev/pn54[478]                                                      u:object_r:nfc_device:s0
+
+# Persist
+/persist(/.*)?                                                      u:object_r:mnt_vendor_file:s0
+/persist-lg(/.*)?                                                   u:object_r:mediadrm_vendor_data_file:s0
+/persist/rct(.*)                                                    u:object_r:mnt_vendor_file:s0
+/persist/encryption_log                                             u:object_r:mnt_vendor_file:s0
+/persist/properties                                                 u:object_r:mnt_vendor_file:s0
+/persist/usf                                                        u:object_r:mnt_vendor_file:s0
+/persist/bluetooth(/.*)?                                            u:object_r:persist_bluetooth_file:s0
+/persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
+/persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
+/persist/alarm(/.*)?                                                u:object_r:persist_alarm_file:s0
+/persist/time(/.*)?                                                 u:object_r:persist_time_file:s0
+/persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
+/persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
+/persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
+/persist/qti_fp(/.*)?                                               u:object_r:persist_qti_fp_file:s0
+/persist/hlos_rfs(/.*)?                                             u:object_r:persist_rfs_shared_hlos_file:s0
+/persist/display(/.*)?                                              u:object_r:persist_display_file:s0
+/persist/rfs(/.*)?                                                  u:object_r:persist_rfs_file:s0
+/persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
+/persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
+/persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
+/persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
+/persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
+/persist/FTM_AP(/.*)?                                               u:object_r:vendor_persist_mmi_file:s0
+
+# Power management
+/sys/devices/soc/qpnp-smbcharger-16/power_supply/battery(/.*)?              u:object_r:sysfs_battery_supply:s0
+/sys/devices/soc/soc:lge-battery-veneer/power_supply/battery-veneer(/.*)?   u:object_r:sysfs_battery_supply:s0
+/sys/devices/soc/6a00000.ssusb/power_supply/usb(/.*)?                       u:object_r:sysfs_usb_supply:s0
+/sys/devices/soc/75b5000.i2c/i2c-7/7-001d/power_supply/usb-parallel(/.*)?   u:object_r:sysfs_usb_supply:s0
+/sys/devices/soc/757a000.i2c/i2c-6/6-0020/power_supply/usb_pd               u:object_r:sysfs_usb_supply:s0
+/sys/devices/soc/qpnp-smbcharger-16/power_supply/dc(/.*)?                   u:object_r:sysfs_usb_supply:s0
+/sys/devices/soc/757a000.i2c/i2c-6/6-0061/power_supply/dc-wireless(/.*)?    u:object_r:sysfs_usb_supply:s0
+
+# RMTS
+/sys/kernel/debug/rmt_storage(/.*)?                                 u:object_r:debugfs_rmts:s0
+
+# Sensors
+/sns/cal/sns.reg                                                    u:object_r:sensors_data_file:s0
+/sns.reg                                                            u:object_r:sensors_data_file:s0
+/sns/cal                                                            u:object_r:sensors_data_file:s0
+/sns                                                                u:object_r:sensors_data_file:s0
+/sns/cal(/.*)?                                                      u:object_r:sensors_data_file:s0
+/persist-lg/sensors(/.*)?                                           u:object_r:sensors_persist_file:s0
+/sns/(/.*)?                                                         u:object_r:sensors_persist_file:s0
+
+# SPI
+/sys/bus/spi/devices                                                u:object_r:sysfs_spi:s0
+
+# WLAN
+/sys/module/bcmdhd/parameters/firmware_path                         u:object_r:sysfs_wlan_fwpath:s0
+/persist/\.macaddr                                                  u:object_r:mnt_vendor_file:s0
+
+# perfd
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service.lge.msm8996         u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/perfd                                   u:object_r:perfd_exec:s0
+/data/misc/perfd(/.*)?                                              u:object_r:perfd_data_file:s0
+/data/system/perfd(/.*)?                                            u:object_r:perfd_data_file:s0
+
+# CND
+/data/connectivity(/.*)?              u:object_r:cnd_core_data_file:s0
+
+# sysfs_ssr
+/sys/devices/soc/[0-9a-f]+\.qcom,lpass/subsys[0-9]+/name           u:object_r:sysfs_ssr:s0
+/sys/devices/soc/[0-9a-f]+\.qcom,mss/subsys[0-9]+/name             u:object_r:sysfs_ssr:s0
+
+# TimeKeep
+/sys/devices/soc/qpnp-rtc-8/rtc/rtc0(/.*)?                         u:object_r:sysfs_rtc:s0
+/(system/vendor|vendor)/bin/timekeep                               u:object_r:timekeep_exec:s0
+
+# Thermal
+/sys/devices(/platform)?/soc/[a-f0-9]+.qcom,msm-thermal/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
