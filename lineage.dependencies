@@ -10,5 +10,13 @@
   {
     "repository": "android_hardware_sony_timekeep",
     "target_path": "hardware/sony/timekeep"
-  }
+     },
+   {
+      "repository":"PixelBoot/packages_apps_GoogleCamera_marlin",
+      "target_path":"packages/apps/GoogleCamera",
+      "branch":"eleven",
+      "remote":"gitlab"
+   }
+   
 ]
+

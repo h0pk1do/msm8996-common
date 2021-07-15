@@ -60,18 +60,12 @@
         <version>1.0</version>
         <interface>
             <name>ICryptoFactory</name>
-            <instance>clearkey</instance>
             <instance>default</instance>
         </interface>
         <interface>
             <name>IDrmFactory</name>
-            <instance>clearkey</instance>
             <instance>default</instance>
         </interface>
-        <fqname>@1.3::ICryptoFactory/clearkey</fqname>
-        <fqname>@1.3::IDrmFactory/clearkey</fqname>
-        <fqname>@1.2::ICryptoFactory/widevine</fqname>
-        <fqname>@1.2::IDrmFactory/widevine</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
@@ -476,5 +470,16 @@
             <name>ICryptfsHw</name>
             <instance>default</instance>
         </interface>
+    </hal>
+    
+    <hal format="hidl">
+        <name>vendor.lge.hardware.thermal</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IThermal</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IThermal/default</fqname>
     </hal>
 </manifest>
